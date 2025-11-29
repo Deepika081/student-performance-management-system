@@ -5,10 +5,9 @@ This project uses Pydantic validation and stores data in a JSON file.
 
 🚀 How to Run
 1. Create and activate virtual environment
-
-Windows:
-python -m venv venv
-venv\Scripts\activate
+- Windows:
+  - python -m venv venv
+  - venv\Scripts\activate
 
 2. Install dependencies
 
