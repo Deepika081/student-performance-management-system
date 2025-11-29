@@ -1,7 +1,6 @@
-Student Performance Management System (FastAPI)
-
-A simple FastAPI project to manage student details, marks, weak areas, and guardian information.
-This project uses Pydantic validation and stores data in a JSON file.
+**Student Performance Management System (FastAPI)**
+- A simple FastAPI project to manage student details, marks, weak areas, and guardian information.
+- This project uses Pydantic validation and stores data in a JSON file.
 
 🚀 How to Run
 1. Create and activate virtual environment
