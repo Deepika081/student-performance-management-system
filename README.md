@@ -4,10 +4,9 @@
 
 🚀 How to Run
 1. Create and activate virtual environment
-
-Windows:
-python -m venv venv
-venv\Scripts\activate
+- Windows:
+    - python -m venv venv
+    - venv\Scripts\activate
 
 2. Install dependencies
 - pip install fastapi uvicorn
