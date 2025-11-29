@@ -10,31 +10,27 @@ This project uses Pydantic validation and stores data in a JSON file.
   - venv\Scripts\activate
 
 2. Install dependencies
-
-pip install fastapi uvicorn
+- pip install fastapi uvicorn
 
 3. Run the server
-
-uvicorn main:app --reload
+- uvicorn main:app --reload
 
 4. Open API docs
-
-Swagger UI → http://127.0.0.1:8000/docs
-
-ReDoc → http://127.0.0.1:8000/redoc
+- Swagger UI → http://127.0.0.1:8000/docs
 
 📌 API Endpoints
-Method	Endpoint	Description
-GET	/	Welcome message
-GET	/about	About the project
-GET	/view	View all students
-GET	/student/{student_id}	Get a student by ID
-GET	/sort?sort_by=name&order=asc	Sort students
+| Method | Endpoint                       | Description         |
+| ------ | ------------------------------ | ------------------- |
+| GET    | `/`                            | Welcome message     |
+| GET    | `/about`                       | About the project   |
+| GET    | `/view`                        | View all students   |
+| GET    | `/student/{student_id}`        | Get a student by ID |
+| GET    | `/sort?sort_by=name&order=asc` | Sort students       |
 
 📁 Project Structure
-main.py
-students.json
-README.md
+- main.py
+- students.json
+- README.md
 
 📌 Features (Current)
 - Fetch all students
