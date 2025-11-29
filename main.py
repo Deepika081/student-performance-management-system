@@ -1,4 +1,5 @@
 from fastapi import FastAPI, Path, HTTPException, Query
+from fastapi.responses import JSONResponse
 # from models import Products
 from pydantic import BaseModel, Field, field_validator, model_validator
 from typing import Annotated, List, Dict, Literal, Optional
@@ -35,7 +36,7 @@ class Student(BaseModel):
     gender: Annotated[Literal['Male','Female','other'],Field(...,description='Gender of student')]
     marks: Annotated[Optional[Marks],Field(default=None,description='Marks of each subject')]
     weak_areas: Annotated[Optional[WeakArea],Field(default=None,description='Weak areas of each subject')]
-    parent_details: Annotated[Guardian, Field(...,description='Details of guardian')]
+    guardian: Annotated[Guardian, Field(...,description='Details of guardian')]
 
     @model_validator(mode='after')
     def check_marks(cls, model):
@@ -64,6 +65,8 @@ class Student(BaseModel):
                         raise ValueError('Marks less than 30 must have weak area(atleast 1)')
                 else:
                     raise ValueError('Too many weak areas')
+                
+        return model
 
 
 def load_data():
@@ -71,6 +74,10 @@ def load_data():
         data = json.load(f)
 
     return data
+
+def save_data(data):
+    with open('students.json', 'w') as f:
+        json.dump(data, f)
 
 @app.get('/')
 def greet():
@@ -110,3 +117,20 @@ def sort_students(sort_by: str = Query(..., description='Sort by roll number, al
 
     return sorted_data
 
+@app.post('/add')
+def add_student(student: Student):
+    print(f"Student object: {student}")
+    print(f"Student type: {type(student)}")
+    #step 1: Load data
+    data = load_data()
+
+    #step 2: check if the student already exists
+    if student.roll_no in data:
+        raise HTTPException(status_code=400,detail='Already exists')
+    # add new student to existing data
+    data[student.roll_no] = student.model_dump(exclude=['roll_no'])
+
+    #save into json
+    save_data(data)
+    
+    return JSONResponse(status_code=200, content={'message': 'student added'})
