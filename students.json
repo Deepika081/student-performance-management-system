@@ -1,0 +1,149 @@
+{
+    "S001": {
+        "Roll no": 1,
+        "name": "Ananya Verma",
+        "gender": "female",
+        "marks": {
+            "Mathematics": 35,
+            "Science": 45,
+            "Social Studies": 23
+        },
+        "weak_areas": {
+            "Mathematics": [
+                "Fractions and Decimals",
+                "Word Problems"
+            ],
+            "Science": [
+                "States of Matter"
+            ],
+            "Social Studies": [
+                "Climate & Weather",
+                "Maps and Directions"
+            ]
+        },
+        "guardian": {
+            "name": "Mr. Verma",
+            "relation": "Father",
+            "contact": "9874561230"
+        }
+    },
+    "S002": {
+        "Roll no": 2,
+        "name": "Ravi Mehta",
+        "gender": "male",
+        "marks": {
+            "Mathematics": 31,
+            "Science": 27,
+            "Social Studies": 20
+        },
+        "weak_areas": {
+            "Mathematics": [
+                "Division (multi-digit)",
+                "Geometry (angles)"
+            ],
+            "Science": [
+                "Force & Motion",
+                "Simple Machines"
+            ],
+            "Social Studies": [
+                "Climate & Weather",
+                "Government & Community Helpers"
+            ]
+        },
+        "guardian": {
+            "name": "Mrs. Mehta",
+            "relation": "Mother",
+            "contact": "9891123476"
+        }
+    },
+    "S003": {
+        "Roll no": 3,
+        "name": "Sneha Kulkarni",
+        "gender": "female",
+        "marks": {
+            "Mathematics": 18,
+            "Science": 16,
+            "Social Studies": 11
+        },
+        "weak_areas": {
+            "Mathematics": [
+                "Fractions and Decimals",
+                "Division",
+                "Geometry"
+            ],
+            "Science": [
+                "Human Body",
+                "Force & Motion",
+                "Light & Shadow"
+            ],
+            "Social Studies": [
+                "History (ancient civilizations)",
+                "Culture & Heritage",
+                "Maps and Directions"
+            ]
+        },
+        "guardian": {
+            "name": "Mr. Kulkarni",
+            "relation": "Father",
+            "contact": "9876543219"
+        }
+    },
+    "S004": {
+        "Roll no": 4,
+        "name": "Arjun Verma",
+        "gender": "male",
+        "marks": {
+            "Mathematics": 14,
+            "Science": 12,
+            "Social Studies": 8
+        },
+        "weak_areas": {
+            "Mathematics": [
+                "Factors & Multiples",
+                "Measurement",
+                "Word Problems"
+            ],
+            "Science": [
+                "Plants (parts & functions)",
+                "States of Matter",
+                "Simple Machines"
+            ],
+            "Social Studies": [
+                "Geography (continents)",
+                "Civics (rights & duties)",
+                "Culture & Heritage"
+            ]
+        },
+        "guardian": {
+            "name": "Mr. Verma",
+            "relation": "Father",
+            "contact": "9845123098"
+        }
+    },
+    "S005": {
+        "Roll no": 5,
+        "name": "Neha Sinha",
+        "gender": "female",
+        "marks": {
+            "Mathematics": 37,
+            "Science": 32,
+            "Social Studies": 23
+        },
+        "weak_areas": {
+            "Mathematics": [
+                "Geometry (angles)"
+            ],
+            "Science": [
+                "Light & Shadow"
+            ],
+            "Social Studies": [
+                "Climate & Weather"
+            ]
+        },
+        "guardian": {
+            "name": "Mrs. Sinha",
+            "relation": "Mother",
+            "contact": "9877001122"
+        }
+    }
+}
