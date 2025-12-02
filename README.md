@@ -27,6 +27,7 @@
 | GET    | `/sort?sort_by=name&order=asc` | Sort students       |
 | POST   | `/add`                         | Adds new students   |
 | PUT    | `/edit/{student_id}`           | Edits existing student |
+| DELETE | `/delete/{student_id}`         | Deletes existing student |
 
 
 📁 Project Structure
