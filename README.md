@@ -25,6 +25,9 @@
 | GET    | `/view`                        | View all students   |
 | GET    | `/student/{student_id}`        | Get a student by ID |
 | GET    | `/sort?sort_by=name&order=asc` | Sort students       |
+| POST   | `/add`                         | Adds new students   |
+| PUT    | `/edit/{student_id}`           | Edits existing student |
+
 
 📁 Project Structure
 - main.py
@@ -36,9 +39,10 @@
 - Fetch student by ID
 - Sort student data
 - Input validation using Pydantic models
+- Add new students
+- Update existing student details
 
 📌 In Progress
-- Add new students
-- Update/delete students
+- Delete students
 - Analytics for student performance
 - Replace JSON with actual database
