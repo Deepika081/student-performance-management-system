@@ -59,14 +59,22 @@ class Student(BaseModel):
 ]
             for i, marks_value, weak_list in subjects:
                 if len(weak_list)<=5:
-                    if marks_value>=30 and len(weak_list)>0:
-                        raise ValueError('Weak areas is not needed if marks is greater than 30')
-                    elif marks_value<30 and len(weak_list)==0:
+                    # if marks_value>=30 and len(weak_list)>0:
+                    #     raise ValueError('Weak areas is not needed if marks is greater than 30')
+                    # el
+                    if marks_value<30 and len(weak_list)==0:
                         raise ValueError('Marks less than 30 must have weak area(atleast 1)')
                 else:
                     raise ValueError('Too many weak areas')
                 
         return model
+    
+class StudentUpdate(BaseModel):
+    name: Annotated[Optional[str],Field(default=None)]
+    gender: Annotated[Optional[Literal['Male','Female','other']],Field(default=None)]
+    marks: Annotated[Optional[Marks],Field(default=None,description='Marks of each subject')]
+    weak_areas: Annotated[Optional[WeakArea],Field(default=None,description='Weak areas of each subject')]
+    guardian: Annotated[Optional[Guardian], Field(default=None)]
 
 
 def load_data():
@@ -134,3 +142,35 @@ def add_student(student: Student):
     save_data(data)
     
     return JSONResponse(status_code=200, content={'message': 'student added'})
+
+@app.put('/edit/{student_id}')
+def update_student(student_id:str, student_update: StudentUpdate):
+
+    data = load_data()
+    if student_id not in data:
+        raise HTTPException(status_code=400,detail='not in data')
+    
+    existing_student = data[student_id]
+    print(existing_student)
+    print(student_update)
+    updated_student = student_update.model_dump(exclude_unset=True)
+    print(updated_student)
+
+    for key,value in updated_student.items():
+        nested_dict = ['marks', 'weak_areas', 'guardian']
+        if key in nested_dict:
+            print(value.items())
+            for inner_key, inner_value in value.items():
+                existing_student[key][inner_key] = inner_value
+        else:
+            existing_student[key] = value
+
+    existing_student['roll_no'] = student_id
+    pydantic_stud = Student(**existing_student)
+    existing_student = pydantic_stud.model_dump(exclude='roll_no')
+
+    data[student_id] = existing_student
+
+    save_data(data)
+
+    return JSONResponse(status_code=200,content={'message':"student updated successfully"})
