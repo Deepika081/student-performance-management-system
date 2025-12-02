@@ -41,8 +41,8 @@
 - Input validation using Pydantic models
 - Add new students
 - Update existing student details
+- Delete students
 
 📌 In Progress
-- Delete students
 - Analytics for student performance
 - Replace JSON with actual database
