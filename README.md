@@ -39,10 +39,10 @@
 ## 📁 Project Structure
 ```
 FASTAPI/
-├── frontend/          # React + TypeScript frontend
-├── main.py           # FastAPI backend
-├── students.json     # Data storage
-└── README.md         # This file
+├── frontend/         
+├── main.py           
+├── students.json     
+└── README.md         
 ```
 
 ## 📌 Features (Completed)
