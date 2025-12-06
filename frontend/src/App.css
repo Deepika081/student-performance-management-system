@@ -1,0 +1,168 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+/* App container */
+#root {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* Table container with scroll */
+.table-container {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  overflow-x: auto;
+}
+
+/* Table styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 1200px;
+}
+
+/* Table header */
+thead {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+thead th {
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 3px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Table body */
+tbody tr {
+  border-bottom: 1px solid #e5e7eb;
+  transition: all 0.3s ease;
+}
+
+tbody tr:hover {
+  background-color: #f3f4f6;
+  transform: scale(1.01);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+tbody tr:last-child {
+  border-bottom: none;
+}
+
+tbody td {
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: #374151;
+  vertical-align: top;
+}
+
+/* First column (Roll No) styling */
+tbody td:first-child {
+  font-weight: 600;
+  color: #667eea;
+}
+
+/* Alternating row colors */
+tbody tr:nth-child(even) {
+  background-color: #f9fafb;
+}
+
+tbody tr:nth-child(even):hover {
+  background-color: #f3f4f6;
+}
+
+/* Gender badge styling */
+tbody td:nth-child(3) {
+  font-weight: 500;
+}
+
+/* Marks columns - add color coding */
+tbody td:nth-child(4),
+tbody td:nth-child(5),
+tbody td:nth-child(6) {
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Weak areas columns */
+tbody td:nth-child(7),
+tbody td:nth-child(8),
+tbody td:nth-child(9) {
+  font-size: 0.85rem;
+  color: #6b7280;
+  max-width: 200px;
+  line-height: 1.5;
+}
+
+/* Guardian info styling */
+tbody td:nth-child(10),
+tbody td:nth-child(11) {
+  font-weight: 500;
+}
+
+/* Contact number styling */
+tbody td:last-child {
+  font-family: 'Courier New', monospace;
+  color: #059669;
+  font-weight: 500;
+}
+
+/* Responsive design */
+@media (max-width: 1400px) {
+  body {
+    padding: 1rem;
+  }
+
+  thead th,
+  tbody td {
+    padding: 0.75rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* Optional: Add title styles if you want to add a heading */
+h1 {
+  color: white;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Scrollbar styling */
+.table-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.table-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+  background: #667eea;
+  border-radius: 4px;
+}
+
+.table-container::-webkit-scrollbar-thumb:hover {
+  background: #5568d3;
+}

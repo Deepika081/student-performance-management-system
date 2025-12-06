@@ -1,4 +1,5 @@
 from fastapi import FastAPI, Path, HTTPException, Query
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 # from models import Products
 from pydantic import BaseModel, Field, field_validator, model_validator
@@ -7,6 +8,14 @@ from annotated_types import Len
 import json
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 class Marks(BaseModel):
     math: Annotated[float, Field(default=0.0, description='Marks student received in math',ge=0,le=50)]
