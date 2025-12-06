@@ -1,23 +1,29 @@
-**Student Performance Management System (FastAPI)**
+# Student Performance Management System
+**Full-stack application to manage student performance data**
 - A simple FastAPI project to manage student details, marks, weak areas, and guardian information.
 - This project uses Pydantic validation and stores data in a JSON file.
 
-🚀 How to Run
+## 🛠️ Tech Stack
+- **Backend:** FastAPI, Python, Pydantic
+- **Frontend:** React, TypeScript, Vite, Axios
+- **Data Storage:** JSON file (temporary)
+
+## 🚀 How to Run
+
+### Backend (FastAPI)
 1. Create and activate virtual environment
-- Windows:
-    - python -m venv venv
-    - venv\Scripts\activate
+   - Windows: `python -m venv venv` → `venv\Scripts\activate`
+2. Install dependencies: `pip install fastapi uvicorn`
+3. Run server: `uvicorn main:app --reload`
+4. API docs: http://127.0.0.1:8000/docs
 
-2. Install dependencies
-- pip install fastapi uvicorn
+### Frontend (React)
+1. Navigate to frontend: `cd frontend`
+2. Install dependencies: `npm install`
+3. Run dev server: `npm run dev`
+4. Open browser: http://localhost:5173
 
-3. Run the server
-- uvicorn main:app --reload
-
-4. Open API docs
-- Swagger UI → http://127.0.0.1:8000/docs
-
-📌 API Endpoints
+## 📌 API Endpoints
 | Method | Endpoint                       | Description         |
 | ------ | ------------------------------ | ------------------- |
 | GET    | `/`                            | Welcome message     |
@@ -30,20 +36,27 @@
 | DELETE | `/delete/{student_id}`         | Deletes existing student |
 
 
-📁 Project Structure
-- main.py
-- students.json
-- README.md
+## 📁 Project Structure
+```
+FASTAPI/
+├── frontend/          # React + TypeScript frontend
+├── main.py           # FastAPI backend
+├── students.json     # Data storage
+└── README.md         # This file
+```
 
-📌 Features (Current)
-- Fetch all students
-- Fetch student by ID
-- Sort student data
-- Input validation using Pydantic models
-- Add new students
-- Update existing student details
-- Delete students
+## 📌 Features (Completed)
+**Backend:**
+- All CRUD operations for students
+- Input validation using Pydantic
+- Sort functionality
+- CORS enabled for frontend
 
-📌 In Progress
+**Frontend:**
+- Display all students in a styled table
+- API integration with Axios
+- TypeScript interfaces for type safety
+
+## 📌 In Progress
 - Analytics for student performance
 - Replace JSON with actual database
